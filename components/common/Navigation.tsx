@@ -1,6 +1,6 @@
-import { ReactNode } from 'react'
+import { FC } from 'react'
 
-const Navigation = () => (
+const Navigation: FC = () => (
   <div></div>
 )
 

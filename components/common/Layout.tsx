@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 
 import Navigation from './Navigation'
 import Footer from './Footer'
@@ -7,12 +7,14 @@ type Props = {
   children?: ReactNode
 }
 
-const Layout = ({ children }: Props) => (
-  <div>
-    <Navigation />
-    {children}
-    <Footer />
-  </div>
-)
+const Layout: FC = ({ children }: Props) => {
+  return (
+    <div>
+      <Navigation />
+      {children}
+      <Footer />
+    </div>
+  )
+}
 
 export default Layout

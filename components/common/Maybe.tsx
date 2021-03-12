@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 
 type Props = {
   test: boolean,
   children: ReactNode
 }
 
-const Maybe = ({ test, children }) => <>{test && children}</>
+const Maybe: FC<Props> = ({ test, children }: Props) => <>{test && children}</>
 
 export default Maybe
