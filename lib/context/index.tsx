@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { FC, ReactNode } from 'react'
 
 import AppContext from './AppContext'
 
@@ -6,7 +6,7 @@ type Props = {
   children?: ReactNode
 }
 
-const ContextProvider = ({ children }: Props) => (
+const ContextProvider: FC = ({ children }: Props) => (
   <AppContext>
     {/* <SomeOtherContext> */}
     {children}
