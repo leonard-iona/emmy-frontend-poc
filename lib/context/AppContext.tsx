@@ -1,4 +1,6 @@
-import { ReactNode, Dispatch, createContext, useContext, useState } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { FC, ReactNode, Dispatch, createContext, useContext, useState } from 'react'
 
 export type PageDispatch = Dispatch<any>
 
@@ -6,18 +8,16 @@ type Props = {
   children?: ReactNode
 }
 
-const AppStateContext = createContext<number | undefined>(undefined)
+const AppStateContext = createContext({})
 
-const AppDispatchContext = createContext<AppDispatch | undefined>(
-  undefined
-)
+const AppDispatchContext = createContext({})
 
-const AppContextProvider = ({ children }: Props) => {
+const AppContextProvider: FC = ({ children }: Props) => {
   const [something, setSomething] = useState<number | undefined>()
 
   return (
-    <AppDispatchContext.Provider value={{setSomething}}>
-      <AppStateContext.Provider value={{something}}>
+    <AppDispatchContext.Provider value={{ setSomething }}>
+      <AppStateContext.Provider value={{ something }}>
         {children}
       </AppStateContext.Provider >
     </AppDispatchContext.Provider>
@@ -30,7 +30,7 @@ export const useAppState = () => {
 }
 
 export const useAppDispatch = () => {
-  const dispatch = useContext(PageDispatchContext)
+  const dispatch = useContext(AppDispatchContext)
   return dispatch
 }
 

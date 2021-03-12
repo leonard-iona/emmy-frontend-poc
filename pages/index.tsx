@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import Head from 'next/head'
 import styled from '@emotion/styled'
 
@@ -83,7 +84,7 @@ const Card = styled('a')`
   }
 `
 
-export default function Home() {
+const Home: FC = () => {
   return (
     <HomeContainer>
       <Head>
@@ -128,3 +129,5 @@ export default function Home() {
     </HomeContainer>
   )
 }
+
+export default Home

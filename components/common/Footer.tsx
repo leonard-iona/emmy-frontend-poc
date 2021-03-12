@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { FC } from 'react';
 import styled from '@emotion/styled'
 
 const FooterContainer = styled('footer')`
@@ -24,18 +24,20 @@ const Logo = styled('img')`
   height: 1em;
 `
 
-const Footer = () => (
-  <FooterContainer>
-    <a
-      href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Powered by{' '}
+const Footer: FC = () => {
+  return (
+    <FooterContainer>
+      <a
+        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Powered by{' '}
 
-      <Logo src="/vercel.svg" alt="Vercel Logo" />
-    </a>
-  </FooterContainer>
-)
+        <Logo src="/vercel.svg" alt="Vercel Logo" />
+      </a>
+    </FooterContainer>
+  )
+}
 
 export default Footer
