@@ -94,7 +94,7 @@ const Home: FC = () => {
 
       <Main>
         <Title>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org">Next.js v2!</a>
         </Title>
 
         <Description>
